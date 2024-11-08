@@ -15,7 +15,7 @@ architecture testbench of tb_tt_um_tobimckellar_top is
             ui_in   : in  std_logic_vector(7 downto 0);
             uo_out  : out std_logic_vector(7 downto 0);
             uio_in  : in  std_logic_vector(7 downto 0);
-            uio_out : in  std_logic_vector(7 downto 0);
+            uio_out : out  std_logic_vector(7 downto 0);
             uio_oe  : out std_logic_vector(7 downto 0);
             ena      : in std_logic;
             clk     : in std_logic;

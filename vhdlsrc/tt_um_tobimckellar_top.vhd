@@ -10,11 +10,11 @@ entity tt_um_tobimckellar_top is
         ui_in   : in  std_logic_vector(7 downto 0);
         uo_out  : out std_logic_vector(7 downto 0);
         uio_in  : in  std_logic_vector(7 downto 0);
-        uio_out : in  std_logic_vector(7 downto 0);
+        uio_out : out std_logic_vector(7 downto 0);
         uio_oe  : out std_logic_vector(7 downto 0);
-        ena     : in std_logic;
-        clk     : in std_logic; -- Assuming 10 kHz Clock
-        rst_n   : in std_logic
+        ena     : in  std_logic;
+        clk     : in  std_logic;
+        rst_n   : in  std_logic
     );
 end entity tt_um_tobimckellar_top;
 
@@ -59,7 +59,7 @@ begin
     uo_out(7) <= pwm_out;
     uo_out(6 downto 0) <= (others => '0');
     uio_oe(7 downto 0) <= (others => '0');
-    -- uio_out(7 downto 0) <= (others => '0');
+    uio_out(7 downto 0) <= (others => '0');
 
     counter_proc : process (clk)
     begin
