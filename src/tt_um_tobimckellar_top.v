@@ -1,12 +1,13 @@
-module tt_um_tobimckellar_top
-  (input  [7:0] ui_in,
-   input  [7:0] uio_in,
-   input  [7:0] uio_out,
-   input  ena,
-   input  clk,
-   input  rst_n,
-   output [7:0] uo_out,
-   output [7:0] uio_oe);
+module tt_um_tobimckellar_top(
+input  wire [7:0] ui_in,    // Dedicated inputs
+output wire [7:0] uo_out,   // Dedicated outputs
+input  wire [7:0] uio_in,   // IOs: Input path
+output wire [7:0] uio_out,  // IOs: Output path
+output wire [7:0] uio_oe,   // IOs: Enable path (active high: 0=input, 1=output)
+input  wire       ena,      // always 1 when the design is powered, so you can ignore it
+input  wire       clk,      // clock
+input  wire       rst_n     // reset_n - low to reset
+);
   wire [5:0] ref_in;
   wire pwm_out;
   wire [5:0] counter;
